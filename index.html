@@ -1,0 +1,391 @@
+<!DOCTYPE HTML &nbsp;>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>READme</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <section id="searchsection" class="">
+        <div class="containers mt-5">.</div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-8 col-12" style="  padding: 10px;">
+
+                    <div class="search-title m-5" style="color: rgb(255, 255, 255);">
+                        <b style="font-size: 50px;">
+                            <p>Best <br>Github Profile <br> Generator</p>
+                        </b>
+                    </div>
+
+                    <div class="search-container m-5">
+                        <input type="text" name="search" class="search-input" id="username"
+                            placeholder="GitHub Username">
+                        <div class="button-search">
+                            <a href="#" class="search-btn" onclick="find()">
+                                <i class="fas fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="random-title m-5">
+                        <b style="font-size: 30px;color: white;">
+                            <p class="textchnage">Create a <span id="randomtext"
+                                    style="color: rgb(116, 224, 116);">Beautiful</span> Profile</p>
+                        </b>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12" style="display: flex; justify-content: center; align-items: center;">
+                    <div class=" " style=" display: flex; justify-content: center; align-items: center; padding: 10px;">
+                        <div class="aboutimage">
+                            <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/github_black_logo_icon_147128.png"
+                                alt="GitHub Logo">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="containers mt-5">.</div>
+
+    </section>
+
+
+    <section id="userprofilesectioninvalid">
+        <div class="container invaliduser mt-5" id="invaliduser">
+            <h6>Invalid User</h6>
+        </div>
+    </section>
+
+    <section id="userprofilesectionvalid">
+        <div class="container profilebox mt-5" style="padding: 20px; color: white;">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <div class="profileimage">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s"
+                            alt="" id="profileimage" style="max-width: 150px; max-height: 150px; border-radius: 50%;">
+                        <h6 id="name" class="mt-2">Name</h6>
+                        <hr>
+                        <div class="profiledetails mt-3">
+                            <h6 id="bio">Bio</h6>
+                            <h6 id="location">Location</h6>
+                            <h6 id="company">Company</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="profiledescription mt-3">
+                        <div class="row text-center">
+                            <div class="col">
+                                <h6>Repo</h6>
+                                <span id="repocount"></span>
+                            </div>
+                            <div class="col">
+                                <h6>Followers</h6>
+                                <span id="followers"></span>
+                            </div>
+                            <div class="col">
+                                <h6>Following</h6>
+                                <span id="following"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="repo mt-4 ms-1" id="repo">
+
+                    </div>
+                </div>
+            </div>
+            <div class="textbutton" style="text-align: right;">
+                <a href="" class="textbutton-perticular"> Next</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="aboutsection">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4 col-12" style=" display: flex; justify-content: center; align-items: center;">
+                    <div class="aboutimage">
+                        <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/github_black_logo_icon_147128.png"
+                            alt="GitHub Logo">
+                    </div>
+                </div>
+                <div class="col-md-8 col-12 about">
+                    <h3 class="about-title">About Me</h3>
+                    <textarea class="about-textarea" placeholder="🔭 I’m currently working on
+👯 I’m looking to collaborate on
+🤝 I’m looking for help with
+🌱 I’m currently learning
+💬 Ask me about
+⚡ Fun fact" rows="10" id="about"></textarea>
+                    <div class="textbutton" style="text-align: right;">
+                        <a href="javascript:void(0)" class="textbutton-perticular" onclick="setdefault()"
+                            id="setvaluebutton">Set Value</a>
+                        <a href="" class="textbutton-perticular"> Next</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="profilestate">
+        <div class="container status mt-3" id="status" style=" padding: 10px;">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="buttonposition mt-3 mb-3"
+                        style=" padding: 10px; display: flex; text-wrap: wrap; justify-content: center;">
+                        <div class="statebutton" onclick="thisyear()">Commits in this Year</div>
+                        <div class="statebutton" onclick="lifetime()">Lifetime Commits</div>
+                        <div class="statebutton" onclick="stakeborder()">Border</div>
+                        <select class="statebutton" name="" id="">Theme
+                            <option value="" id="dark">Dark</option>
+                            <option value="" id="light">Light</option>
+                        </select>
+
+                    </div>
+
+                    <div class=" mt-3  d-flex justify-content-center align-items-center" id="statshtml"
+                        style="padding: 2px; ">
+
+                    </div>
+                    <div class="mt-3  d-flex justify-content-center align-items-center" id="langshtml"
+                        style="padding: 2px;">
+
+                    </div>
+                    <div class="mt-3 mb-3  d-flex justify-content-center align-items-center" id="streakhtml"
+                        style="padding: 2px;">
+
+                    </div>
+                </div>
+
+                <div class="col-md-4" style=" display: flex; justify-content: center; align-items: center;">
+                    <div class="aboutimage">
+                        <img src="https://cdn.icon-icons.com/icons2/2428/PNG/512/github_black_logo_icon_147128.png"
+                            alt="GitHub Logo">
+                    </div>
+                </div>
+
+            </div>
+            <div class="textbutton" style="text-align: right;">
+                <a href="" class="textbutton-perticular"> Next</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="sociallinksection" class="mt-5">
+        <div class="container text-center">
+            <b>
+                <p class="" style="color: white; font-size: 40px;">Add Socila Links</p>
+            </b>
+            <div class="row mb-5">
+                <div class="col-md-6 col-12">
+                    <div class="sociallinkcontainer">
+                        <div class="search-container m-5">
+                            <i class="fab fa-linkedin ms-1 me-2"></i>
+                            <input type="text" name="search" class="search-input" id="linked" placeholder="Linked Link">
+                            <div class="button-search">
+                                <a href="#" class="search-btn" onclick="linked()">
+                                    <i class="fas fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="search-container m-5">
+                            <i class="fas fa-code ms-1 me-2"></i>
+                            <input type="text" name="search" class="search-input" id="leetcode"
+                                placeholder="Leetcode Link">
+                            <div class="button-search">
+                                <a href="#" class="search-btn" onclick="leetcode()">
+                                    <i class="fas fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="sociallinkcontainer">
+                        <div class="search-container m-5">
+                            <i class="fab fa-facebook ms-1 me-2"></i>
+                            <input type="text" name="search" class="search-input" id="facebook"
+                                placeholder="Facebook Link">
+                            <div class="button-search">
+                                <a href="#" class="search-btn" onclick="facebook()">
+                                    <i class="fas fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="search-container m-5">
+                            <i class="fab fa-instagram ms-1 me-2"></i>
+                            <input type="text" name="search" class="search-input" id="insta"
+                                placeholder="Instagram Link">
+                            <div class="button-search">
+                                <a href="#" class="search-btn" onclick="insta()">
+                                    <i class="fas fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="textbutton" style="text-align: right;">
+                <a href="" class="textbutton-perticular"> Next</a>
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section id="technicalskillsection" class="mt-5">
+        <div class="container text">
+<!-- Technical Search -->
+            <div class="technicalsearchbutton" style=" display: flex; justify-content: center;">
+                <div class="search-container m-5 text-center">
+                    <!-- <i class="fas fa-code ms-1 me-2"></i> -->
+                    <input type="text" name="search" class="search-input" id="technicalsearch"
+                        placeholder="Add Tech that you use">
+                    <div class="button-search">
+                        <a href="#" class="search-btn">
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+    
+            </div>
+
+            <div class="language text-center" style=" padding: 10px;">
+               <b><p style="color: white; font-size: 30px;">Language</p></b>
+                <div class="language-container" style="background-color: rgba(56, 56, 56, 0.4);border-radius: 20px; padding: 20px; margin: 50px;">
+                    <div class="techbutton"  onclick="techselect()"  id="HTML"><h6>HTML &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="CSS"><h6>CSS &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="JavaScript"><h6>JavaScript &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="React"><h6>React &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="NodeJS"><h6>Node JS &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="Express"><h6>Express &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="Tailwind"><h6>Tailwind CSS &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="Bootstrap"><h6>Bootstrap &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="TypeScript"><h6>TypeScript &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="Java"><h6>Java &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="C"><h6>C &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="C++"><h6>C++ &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="Python"><h6>Python &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="Go"><h6>Go &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="Swiift"><h6>Swiift &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="C#"><h6>C# &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="PHP"><h6>PHP &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="R"><h6>R &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="Shell"><h6>Shell Script &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="SQL"><h6>SQL &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="MongoDB"><h6>MongoDB &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="POstgre"><h6>POstgre SQL &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="Oracle"><h6>Oracle &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="AWS"><h6>AWS &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="Azure"><h6>Azure &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="Google"><h6>Google Cloud &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()"  id="Rust"><h6>Rust &nbsp; <i class="fas fa-plus"></i></h6></div>
+                </div>
+            </div>
+
+            <div class="language text-center" style=" padding: 10px;">
+                <b><p style="color: white; font-size: 30px;">Frameworks, Platform & Libraries</p></b>
+                <div class="language-container" style="background-color: rgba(56, 56, 56, 0.4);border-radius: 20px; padding: 20px; margin: 50px;">
+                    <div class="techbutton"  onclick="techselect()" ><h6>Angular &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Vue.js &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Ember.js &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>React Native &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Flutter &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>GraphQL &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Sass &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Material UI &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Redux &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Spring Boot &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Flask &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Django &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Laravel &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>TensorFlow &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>PyTorch &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Unity &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>OpenGL &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Meteor &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Drupal &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Magento &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Shopify &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Apache Kafka &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Elasticsearch &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Kubernetes &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Amazon DynamoDB &nbsp; <i class="fas fa-plus"></i></h6></div>
+                    <div class="techbutton"  onclick="techselect()" ><h6>Microsoft SQL Server &nbsp; <i class="fas fa-plus"></i></h6></div>
+                </div>
+            </div>
+            <div class="textbutton" style="text-align: right;">
+                <a href="" class="textbutton-perticular"> Next</a>
+            </div>
+
+
+            
+        </div>
+    </section>
+
+
+
+
+    <section id="tropiessection" class="mt-5">
+        <div class="container text-center">
+            <b><p style="color: white; font-size: 30px;">Add Github Tropies</p></b>
+            <div class="githubtropies" id="githubtropies">
+
+            </div>
+
+            <!-- <b><p style="color: white; font-size: 30px;">Add Profile Views</p></b>
+            <div class="githubprofileviews" id="githubprofileviews">
+
+            </div> -->
+            <div class="textbutton" style="text-align: right;">
+                <a href="" class="textbutton-perticular"> Next</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="finalsection" class="mt-5">
+        <div class="container" style="display: flex; justify-content: center; align-items: center; ">
+            <div class="textbutton" style="text-align: right; padding: 10px; margin: 20px; ">
+                <a href="" class="textbutton-perticular" style="width: 100%;"> Copy the Code</a>
+            </div>
+            <div class="textbutton" style="text-align: right;">
+                <a href="" class="textbutton-perticular" style="width: 100%;"> Create new one</a>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
